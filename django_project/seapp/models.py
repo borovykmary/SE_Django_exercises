@@ -7,12 +7,26 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0.01)])
     available = models.BooleanField(default=True)
 
-def __str__(self):
+    def save(self, *args, **kwargs):
+        if self.price is None or self.price < 0:
+            raise ValidationError("Price must be greater than or equal to 0")
+        if not self.price:
+            raise ValidationError("Price is required")
+        super().save(*args, **kwargs)
+
+    def __str__(self):
         return self.name
 
 class Customer(models.Model):
     name = models.CharField(max_length=100)
     address = models.TextField()
+
+    def save(self, *args, **kwargs):
+        if not self.name:
+            raise ValidationError('Name must be specified.')
+        if not self.address:
+            raise ValidationError('Address must be specified.')
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
