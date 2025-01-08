@@ -8,7 +8,7 @@ paths:
       operationId: listProducts
       description: ''
       parameters: []
-      responses:
+      responses
         '200':
           content:
             application/json:
