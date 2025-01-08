@@ -1,4 +1,5 @@
 .DS_Store
 .idea
 se_lab (venv)
-__pycache__
+__pycache__/
+venv/
