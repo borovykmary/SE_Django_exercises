@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     services:
       db:
-      image: postgres:17
-      env:
-      POSTGRES_USER: DjangoAdmin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: db
+        image: postgres:17
+        env:
+          POSTGRES_USER: DjangoAdmin
+          POSTGRES_PASSWORD: admin
+          POSTGRES_DB: db
     steps:
       - name: Check out code
         uses: actions/checkout@v2
