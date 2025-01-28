@@ -8,7 +8,7 @@ paths:
       operationId: listProducts
       description: ''
       parameters:
-      - name: search
+      - name: searc
         required: false
         in: query
         description: A search term.
