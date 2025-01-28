@@ -9,7 +9,7 @@ paths:
       description: ''
       parameters:
       - name: search
-        required: false
+        required: fals
         in: query
         description: A search term.
         schema:
