@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 class ProductModelTest(TestCase):
     def test_create_product_with_valid_data(self):
         temp_product = Product.objects.create(name='Temporary product',
-        price=1.99, available=True)
+        price=2.99, available=True)
         self.assertEqual(temp_product.name, 'Temporary product')
         self.assertEqual(temp_product.price, 1.99)
         self.assertTrue(temp_product.available)
